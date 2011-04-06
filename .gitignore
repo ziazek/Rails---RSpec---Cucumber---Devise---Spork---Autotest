@@ -10,3 +10,7 @@ doc/app
 *˜ 
 .DS_Store 
 *.tmproj
+log/development.log
+log/production.log
+log/server.log
+log/test.log
