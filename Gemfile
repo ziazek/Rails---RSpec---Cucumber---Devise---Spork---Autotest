@@ -5,7 +5,31 @@ gem 'rails', '3.0.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
+group :production do
+  # gem 'pg'  # for postgresql
+end
+
+gem "jquery-rails"
+
+group :test, :development do
+  gem "rspec"
+  gem "rspec-rails"
+  gem "cucumber-rails"
+  gem "capybara", '0.4.1.2'
+  gem 'database_cleaner'
+  gem 'launchy'
+  # gem "webrat"
+  gem "shoulda"
+  gem "autotest"
+  gem "autotest-rails-pure"
+  gem "annotate"
+  gem "factory_girl_rails"
+  
+  #Spork to make rspec testing a bit faster.
+  gem 'spork', '~> 0.9.0.rc'
+  # memcached
+  # gem 'dalli'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -20,7 +44,7 @@ gem 'pg'
 # Bundle the extra gems:
 # gem 'bj'
 # gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
 # Bundle gems for the local environment. Make sure to
