@@ -1,4 +1,18 @@
 DaytumB::Application.routes.draw do
+  
+  devise_for  :users,  
+              :path => "u",
+              :skip => [:sessions] do
+    get '/signin'   => "devise/sessions#new",       :as => :new_user_session
+    post '/signin'  => 'devise/sessions#create',    :as => :user_session
+    get '/signout'  => 'devise/sessions#destroy',   :as => :destroy_user_session
+    # get "/signup"   => "devise/registrations#new",   :as => :new_user_registration
+  end
+
+  get "dataset/index"
+
+  root :to => "dataset#index"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
