@@ -3,7 +3,7 @@ require 'spork'
 
 Spork.prefork do
   # Sets up the Rails environment for Cucumber
-  ENV["RAILS_ENV"] ||= "cucumber"
+  ENV["RAILS_ENV"] ||= "test"
   require File.expand_path(File.dirname(__FILE__) + '/../../config/environment')
 
   require 'capybara/rails'
@@ -27,9 +27,9 @@ end
 Spork.each_run do
   # This code will be run each time you run your specs.
   require 'cucumber/rails/world'
-  ActionController::Base.allow_rescue = false
-  Cucumber::Rails.use_transactional_fixtures
-  Cucumber::Rails.bypass_rescue # Comment out this line if you want Rails own error handling 
+  # ActionController::Base.allow_rescue = false
+  # Cucumber::Rails.use_transactional_fixtures
+  # Cucumber::Rails.bypass_rescue # Comment out this line if you want Rails own error handling 
                                 # (e.g. rescue_action_in_public / rescue_responses / rescue_from)
                                 
   if defined?(ActiveRecord::Base)
