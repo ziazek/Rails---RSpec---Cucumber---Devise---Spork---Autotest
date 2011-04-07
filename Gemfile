@@ -10,6 +10,7 @@ group :production do
 end
 
 gem "jquery-rails"
+gem "devise"
 
 group :test, :development do
   gem "rspec"
