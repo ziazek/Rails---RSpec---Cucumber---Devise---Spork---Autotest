@@ -46,10 +46,10 @@ Spork.prefork do
   ENV["RAILS_ENV"] ||= "test"
   require File.expand_path(File.dirname(__FILE__) + '/../../config/environment')
 
-  require 'cucumber/rails'  # I needed to add this... We could move this require to Spork if we think it is better there...
+  require 'cucumber/rails'
   require 'cucumber/formatter/unicode' # Comment out this line if you don't want Cucumber Unicode support
-  require 'cucumber/rails/world'
-  require 'cucumber/rails/rspec'
+  #require 'cucumber/rails/world'
+  # require 'cucumber/rails/rspec'
   # require 'cucumber/rails/active_record'
   require 'cucumber/web/tableish' # https://gist.github.com/903664
   require 'capybara/rails'
